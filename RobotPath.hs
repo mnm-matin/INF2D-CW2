@@ -34,7 +34,7 @@ findPath start end method = putStrLn $ showRP $ makePath initRobotGrid path
     where search = case method of
                    (1,_) -> breadthFirstSearch end next [[start]] [] 
                    (2,_) -> depthFirstSearch end next [[start]] []
-                   (3,_) -> depthLimitedSearch end next [[start]] depthLimit
+                   (3,_) -> depthLimitedSearch end next [[start]] depthLimit []
                    (4,_) -> iterDeepSearch  end next start 1
                    (5,_) -> bestFirstSearch end next (manhattan end) [[start]] []
                    (6,_) -> aStarSearch end next (manhattan end) cost [[start]] []
